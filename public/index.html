@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGN UP</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9d2;
+        background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .login-div {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        height: fit-content;
+      }
+      .login-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 90%;
+        height: 30px;
+      }
+      input[type="submit"] {
+        width: 50%;
+        height: 40px;
+        font-size: larger;
+      }
+      #role {
+        width: 50%;
+        height: 40px;
+        font-size: large;
+        margin: 10px 0px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .inner-buttons {
+        display: flex;
+        justify-content: center;
+      }
+      .inner-buttons #signup {
+        width: 40%;
+        height: 40px;
+        font-size: larger;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #007bff;
+      }
+
+      .navbar h1 {
+        color: #fff;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .navbar-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .navbar-buttons a {
+        padding: 8px 16px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .signup-btn {
+        background-color: #28a745;
+      }
+
+      .login-btn {
+        background-color: #28a745;
+      }
+
+      .navbar-buttons a:hover {
+        opacity: 0.9;
+      }
+
+      .navbar-buttons a {
+        height: auto;
+        width: auto;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Itinerary</h1>
+      <div class="navbar-buttons">
+        <button class="signup-btn"><a href="#">Sign Up</a></button>
+        <button class="login-btn"><a href="./login">Login</a></button>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="inner-container">
+        <div class="login-div">
+          <form class="login-form">
+            <h1>SIGN UP</h1>
+            <label for="email">EMAIL:</label><br />
+            <input type="email" id="email" name="email" required />
+            <br />
+            <label for="password">PASSWORD:</label><br />
+            <input type="password" id="password" name="password" required />
+
+            <br />
+            <label for="username">USERNAME:</label><br />
+            <input type="text" id="username" name="username" required />
+
+            <br />
+
+            <select id="role" name="role">
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+            <div class="inner-buttons">
+              <input id="signup" type="submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = form.email.value;
+        const password = form.password.value;
+        let role = form.role.value;
+        if (role == "user") {
+          role = "User";
+        } else {
+          role = "Admin";
+        }
+        const username = form.username.value;
+        const res = await fetch("/signup", {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+            username: username,
+            password: password,
+            role: role,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then(async (response) => {
+            if (!response.ok) {
+              const errorMessage = await response.text();
+              throw new Error(errorMessage);
+            }
+            const data = await response.json();
+            alert("SIGNUP SUCCESSFULL");
+            console.log("SignUp successful:", data);
+            location.assign("/login");
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("username").value = "";
+            document.getElementById("role").value = "";
+          })
+          .catch((error) => {
+            console.error("Error:", error.message);
+            alert(error.message);
+          });
+      });
+    </script>
+  </body>
+</html>

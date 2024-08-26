@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGN UP</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9d2;
+        background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%);
+      }
+      .container {
+        width: 100%;
+      }
+      .login-div {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        height: fit-content;
+      }
+      .login-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      input[type="email"],
+      input[type="password"] {
+        width: 90%;
+        height: 30px;
+      }
+      input[type="submit"] {
+        width: 50%;
+        height: 40px;
+        font-size: larger;
+      }
+      #role {
+        width: 50%;
+        height: 40px;
+        font-size: large;
+        margin: 10px 0px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #007bff;
+      }
+
+      .navbar h1 {
+        color: #fff;
+        font-size: 24px;
+        margin: 0;
+      }
+
+      .navbar-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .navbar-buttons a {
+        padding: 8px 16px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .signup-btn {
+        background-color: #28a745;
+      }
+
+      .login-btn {
+        background-color: #28a745;
+      }
+
+      .navbar-buttons a:hover {
+        opacity: 0.9;
+      }
+
+      .navbar-buttons a {
+        height: auto;
+        width: auto;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      .user-profile {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        height: fit-content;
+      }
+      #outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      .inner-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      #numberofusers {
+        font-size: larger;
+        font-weight: bolder;
+        background-color: antiquewhite;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Itinerary</h1>
+      <div class="navbar-buttons">
+        <h1 id="namefromjwt"></h1>
+        <button class="signup-btn">
+          <a href="./account">User Account MANIPULATION</a>
+        </button>
+        <button class="login-btn"><a href="./homeAdmin">Dashboard</a></button>
+        <button class="login-btn"><a href="./logout">Logout</a></button>
+      </div>
+    </nav>
+    <div class="container">
+      <div id="numberofusers"></div>
+      <div class="inner-container">
+        <div class="login-div">
+          <div class="login-form">
+            <h1>USER ACCOUNT CREATION</h1>
+            <label for="email">EMAIL:</label><br />
+            <input type="email" id="email" name="email" required />
+            <br />
+            <label for="password">PASSWORD:</label><br />
+            <input type="password" id="password" name="password" required />
+
+            <br />
+            <label for="username">USERNAME:</label><br />
+            <input type="text" id="username" name="username" required />
+
+            <br />
+            <div class="inner-buttons">
+              <button id="signup" onclick="setter()">Submit</button>
+              <button id="updator" onclick="doer()">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outer"></div>
+    </div>
+
+    <script src="./script3.js"></script>
+  </body>
+</html>

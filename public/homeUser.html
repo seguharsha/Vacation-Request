@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+   body {
+        font-family: 'Zain', 'sans-serif';
+        margin: 0;
+        padding: 0;
+        background: #000428;
+        background-color: #fde7f9;
+background-image: linear-gradient(315deg, #fde7f9 0%, #aacaef 74%);
+        overflow-x: hidden;
+        }
+    button{
+        border-radius:10%;
+
+    }
+    h1{
+        color: black;
+    }
+    #outer,#pending,#accepted,#denied{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .content{
+            padding: 6px;
+        padding: 3px;
+        margin:20%;
+            background-color: azure  ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:3%;
+        flex-direction: column;
+            margin:40%;
+            
+    }
+    .content{
+        padding: 8px;
+        margin: 4px;
+        border:4px solid yellowgreen;
+        border-radius: 10%;
+    }
+    p{
+        margin: 0;
+    }
+    #form{
+        
+            position: relative;
+            top:50%;
+            left:40%;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    #form{
+        color:aliceblue;
+    }
+    #createree{
+        width: 100px;
+        height: 50px;
+        color:blanchedalmond;
+        background-color: #000428;
+    }
+    h2{
+        padding-left: 0px;
+        color:black;
+        font-family:Arial, Helvetica, sans-serif;
+        text-align: center;
+
+    }
+    .headings{
+        background-color: #c3cbdc;
+background-image: linear-gradient(147deg, #c3cbdc 0%, #edf1f4 74%);
+
+
+    }
+    .container{
+        padding: 0;
+        margin: 0;
+
+    }
+    h1{
+        font-family:Arial, Helvetica, sans-serif;
+        text-align: center;
+}
+h3{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+    color:darkgray
+}
+.upta{
+    background-color: green;
+    font-size: large;
+    color:antiquewhite
+
+}
+    .delta{
+        background-color: red;
+        font-size: large;
+        color:#fee140;
+    }
+    #formname,#formdescription,#formprice,#formcategory,#formquantity,#formbrand,#formweight,#formcolor{
+    border: 2px solid #4CAF50; 
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+#submit{
+    padding: 10px;
+    color:wheat  ;
+    background-color:   chocolate;
+    font-size: larger;
+    margin:2%;
+}
+.content{
+    width:300px;
+    background-color: #f8f9d2;
+background-image: linear-gradient(315deg, #f8f9d2 0%, #e8dbfc 74%); 
+}
+
+.content {
+    padding: 20px;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: transform 0.5s ease; 
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+
+#outer,#pending,#accepted,#denied{
+    justify-content: center;
+}
+.h3l{
+    font-weight: bolder;
+    color: #000428  ;
+}
+#form{
+    width: 20%;
+    
+}
+.submitbutton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+h3{
+    font-size: large;
+    padding: 0%;
+    margin: 0%;
+    color: black;
+    font-weight: 300;
+    font-style: italic;
+}
+.createbutton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+h1{
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+}
+h2{
+      font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.labell{
+    font-size: medium;
+    font-style: oblique;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type="date"],input[type="text"],input[type="number"] {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+     font-family: 'Arial', sans-serif;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    outline: none;
+        }
+        
+        .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+}
+
+.navbar h1 {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+
+.navbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-buttons a {
+  padding: 8px 16px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.signup-btn {
+  background-color: #28a745;
+}
+
+.login-btn {
+  background-color: #28a745;
+}
+
+.navbar-buttons a:hover {
+  opacity: 0.9;
+}
+
+.navbar-buttons a {
+  height: auto;
+  width: auto;
+}
+
+      a{
+        text-decoration: none;
+      }
+
+</style>
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>Itinerary</h1>
+        <div class="navbar-buttons">
+          
+            <h1 id="namefromjwt" ></h1>
+          <button class="login-btn"><a href="./logout">Logout</a></button>
+        </div>
+      </nav>
+    <div class="container">
+    <div class="headings">
+
+        <h1>Itinerary</h1>
+    
+    
+ <h2>AS A USER YOU CAN SUBMIT A REQUEST BY CLICKING ON BELOW BUTTON FOR VACATION ADMINS CAN ACCEPT OR DENY IT</h2> 
+ <div class="createbutton">
+ <button onclick="createItem()" id="createree">SUBMIT A REQUEST</button>
+</div>
+
+</div>
+<div class="pop">
+ <div id="form">
+        <h3  style="text-align: center;"> Title :</h3>
+        <input type="text" id="title"> <br>
+        <h3  style="text-align: center;">Destination:</h3>
+        <input type="text" id="destination"><br>
+        <h3  style="text-align: center;"> Start Date:</h3>
+        <input type="date"  id="startdate"><br>
+      
+           <h3 style="text-align: center;">End Date</h3>
+           <input type="date"  id="Enddate"><br>
+<h3  style="text-align: center;">Description:</h3>
+<input type="text" id="description"><br>
+<h3  style="text-align: center;">Budget:</h3>
+<input type="number"  id="budget"><br>
+ <h3 style="text-align: center;" >Traveler Name:</h3>
+ <input type="text" id="travelername"><br> 
+ <h3 style="text-align: center;" >Traveler Contact:</h3>
+ <input type="text" id="travelercontact"><br> 
+ <h3 style="text-align: center;" >Total Cost</h3>
+ <input type="number" id="totalcost"><br> 
+ <div class="submitbutton">
+<button id="submit" >Submit</button>
+</div>
+</div>
+
+
+    </div>
+    <div class="upper">
+    <div id="inventory"> 
+    <h2 style="text-align: center;">TOTAL DATA</h2>
+        <div id="data">
+                <div id="outer"> </div>
+                <div id="pending">
+                    <h2>pending</h2>
+                </div>
+                <div id="accepted">
+                    <h2>accepted</h2>
+                </div>
+                <div id="denied">
+                    <h2>denied</h2>
+                </div>
+            </div>
+                
+        </div>
+      
+</div>
+    </div>
+    
+</div>
+<script src="./script.js"></script>
+<script>
+
+finder();
+ function finder(){
+    document.getElementById('namefromjwt').innerHTML=`<h1 id="namefromjwt">WELCOME USER ${JSON.parse(sessionStorage.getItem('userobj')).username}</h1>`
+}
+
+</script>
+</body>
+</html>
